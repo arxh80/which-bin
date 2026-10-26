@@ -16,8 +16,16 @@ describe('Leeds rules', () => {
     expect(binFor('carrier-bag')).toBe('green')
   })
 
+  it('matches the council A to Z for items people get wrong', () => {
+    expect(binFor('toothpaste-tube')).toBe('green')
+    expect(binFor('coffee-cup')).toBe('black')
+    expect(binFor('glitter-wrap')).toBe('black')
+    expect(binFor('pyrex')).toBe('black')
+    expect(binFor('pringles-tube')).toBe('drop-off')
+  })
+
   it('keeps hazards out of every wheelie bin', () => {
-    for (const id of ['battery', 'vape', 'light-bulb', 'medicine', 'paint-tin']) expect(binFor(id)).toBe('drop-off')
+    for (const id of ['battery', 'vape', 'light-bulb', 'medicine', 'paint-tin', 'gas-bottle', 'sharps', 'oil']) expect(binFor(id)).toBe('drop-off')
   })
 })
 

@@ -13,7 +13,7 @@ Putting the wrong thing in the recycling bin (contamination) can get a whole loa
 ## How it works
 
 1. **Recognise:** [MobileCLIP-S0](https://huggingface.co/Xenova/mobileclip_s0) runs in the browser through [transformers.js](https://github.com/huggingface/transformers.js), on WebGPU where available and WebAssembly otherwise. It turns the photo into an embedding.
-2. **Match:** the embedding is compared with precomputed text embeddings for 42 everyday items, several phrasings each (`scripts/embed-items.ts`). Only the vision half of the model ships to the phone (23 MB, fp16).
+2. **Match:** the embedding is compared with precomputed text embeddings for 60 everyday items, several phrasings each (`scripts/embed-items.ts`). Only the vision half of the model ships to the phone (23 MB, fp16).
 3. **Decide:** each item has a material category, and a council rules file maps categories to bins with a preparation tip ([`src/data/councils/leeds.ts`](src/data/councils/leeds.ts), sourced from leeds.gov.uk and dated).
 4. **Ask when unsure:** below 50% confidence the app shows its top 3 guesses to tap, plus text search.
 
@@ -25,7 +25,9 @@ Adding a council means adding one rules file. TypeScript refuses to build if any
 
 | Set | Photos | Item top-1 | Item top-3 | Right bin |
 | --- | --- | --- | --- | --- |
-| Wikimedia Commons smoke set (10 items) | 12 | 91.7% | 100% | 91.7% |
+| Wikimedia Commons smoke set (10 items) | 12 | 83.3% | 100% | 83.3% |
+
+Going from 42 to 60 items cost one smoke-set photo: a skateboarder jumping a small red box now leans to "Pringles tube" (17%, so the app asks instead of answering).
 
 The 8-bit model build scored near-random on the same photos, so the app uses fp16, which matched full precision.
 

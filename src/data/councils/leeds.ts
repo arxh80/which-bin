@@ -4,6 +4,8 @@ import type { Council } from './types'
 // https://www.leeds.gov.uk/bins-and-recycling/your-bins/green-recycling-bin
 // https://www.leeds.gov.uk/bins-and-recycling/your-bins/black-bin
 // https://www.leeds.gov.uk/bins-and-recycling/your-bins/brown-garden-waste-bin
+// https://www.leeds.gov.uk/bins-and-recycling/a-to-z-of-reusing-recycling-and-waste-disposal
+// https://www.leeds.gov.uk/bins-and-recycling/medical-waste
 // https://news.leeds.gov.uk/news/leeds-city-council-clarifies-position-on-bin-collections-as-new-brown-bin-food-collection-trial-announced
 export const leeds: Council = {
   id: 'leeds',
@@ -45,5 +47,18 @@ export const leeds: Council = {
     paint: { bin: 'drop-off', tip: 'Take to a household waste recycling site.' },
     textiles: { bin: 'drop-off', tip: 'Donate wearable items to a charity shop, or use a textile bank.' },
     wood: { bin: 'drop-off', tip: 'Take to a household waste recycling site.' },
+    'paper-tube-metal-ends': { bin: 'drop-off', tip: 'Card tubes with metal ends (Pringles, gravy granules, hot chocolate) go to the Kirkstall, Wetherby or Yeadon recycling centre.' },
+    'coffee-cup': { bin: 'black', tip: 'Paper cups are lined with plastic, so they cannot go with normal card. Leeds city centre has on-the-go coffee cup recycling bins.' },
+    'coffee-pod': { bin: 'drop-off', tip: 'Podback containers at the Kirkstall, Wetherby and Yeadon recycling centres take coffee, tea and hot chocolate pods.' },
+    oil: { bin: 'drop-off', tip: 'Never pour it down the drain. Take it to the used oil container at a recycling centre.' },
+    'gas-bottle': { bin: 'drop-off', tip: 'Not in any bin, and recycling centres do not take them. Return it to the supplier named on it (Calor, BOC, Flogas), who will collect.' },
+    sharps: { bin: 'drop-off', tip: 'Use a sharps bin (your doctor can prescribe one). Some GP surgeries take full ones, so check first.' },
+    'barbecue-ash': { bin: 'black', tip: 'Wait until the next day so it is completely cold. Soak a disposable barbecue in water and wrap it in foil. Bag coal ash.' },
+    'sheet-glass': { bin: 'drop-off', tip: 'Not in the green bin or bottle banks. Take it to the non-recyclable waste container at a recycling centre, or book a bulky waste collection.' },
+    'ink-cartridge': { bin: 'drop-off', tip: 'Refill it, or give it to a charity cartridge scheme. Freepost envelopes are often in supermarkets.' },
+    'glitter-paper': { bin: 'black', tip: 'Glitter and shiny metallic paper cannot be recycled. Plain wrapping paper and cards can go in the green bin.' },
+    books: { bin: 'drop-off', tip: 'Charity shops take books, or use the book bank at a recycling centre.' },
+    'scrap-metal': { bin: 'drop-off', tip: 'Donate it if it is still usable. Otherwise use the scrap metal container at a recycling centre.' },
+    spectacles: { bin: 'drop-off', tip: 'Many opticians collect old glasses for reuse. Ask your local optician.' },
   },
 }
